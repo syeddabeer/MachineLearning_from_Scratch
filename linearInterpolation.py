@@ -15,8 +15,11 @@ def lin_interpolate(data):
     # second column being a column of all 1s. Convince yourself why this is an equivalent representation
     # to our desired problem.
     data = np.array(data)
+    print("data: ", data)
     X = np.ones_like(data)
+    print("X: ", data)
     X[:, 0] = data[:, 0]
+    print("X: ", data)
     inverted = np.linalg.inv(np.dot(X.transpose(), X))
     coeff = np.dot(inverted, np.dot(X.transpose(), data[:, 1]))
     return tuple(coeff)
